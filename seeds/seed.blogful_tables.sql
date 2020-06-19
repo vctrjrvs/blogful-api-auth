@@ -8,12 +8,18 @@ TRUNCATE
 
 INSERT INTO blogful_users (user_name, full_name, nickname, password)
 VALUES
-  ('dunder', 'Dunder Mifflin', null, 'password'),
-  ('b.deboop', 'Bodeep Deboop', 'Bo', 'bo-password'),
-  ('c.bloggs', 'Charlie Bloggs', 'Charlie', 'charlie-password'),
-  ('s.smith', 'Sam Smith', 'Sam', 'sam-password'),
-  ('lexlor', 'Alex Taylor', 'Lex', 'lex-password'),
-  ('wippy', 'Ping Won In', 'Ping', 'ping-password');
+  ('dunder', 'Dunder Mifflin', null, '$2a$12$P/.wU/o.TPOAwfMW8fwOROEMZsJAaas5IdSKEppyXLPfc/BDSIN7a'),
+  ('b.deboop', 'Bodeep Deboop', 'Bo', '$2a$12$2f8M0WK/T1wtNIAsUo5IdeOlqDCjAfJg.3j5Lfp3Nih8TncCMEylu'),
+  ('c.bloggs', 'Charlie Bloggs', 'Charlie', '$2a$12$SEeR/wrb0knNlWGYDD6.3./sfGnJkq5bnwll5R.8EovRWZ54TrnVm'),
+  ('s.smith', 'Sam Smith', 'Sam', '$2a$12$q3mnKabEoFiepB6stWL17.HRKnv0sMFilhjz646gssZywA94UqGua'),
+  ('lexlor', 'Alex Taylor', 'Lex', '$2a$12$KBP2ziKhar0/fQ684f1aAOhHQxSKZ3etl8HSz7aZzuKB.H1YMEhYa'),
+  ('wippy', 'Ping Won In', 'Ping', '$2a$12$GZEhSnTWrIZhwph96xBlBubhy8A3/CJEcP9RDiSXj0ja9TN4yUy8.');
+
+  -- bcrypt.hash('password', 12).then(hash => console.log({ hash }))
+
+  -- psql -U dunder_mifflin -d blogful-auth -f ./seeds/seed.blogful_tables.sql
+
+
 
 INSERT INTO blogful_articles (title, style, author_id, content)
 VALUES
